@@ -1,0 +1,14 @@
+# Virtual environment files
+.venv/
+
+# Cached files
+__pycache__/
+
+# Scraped pages
+scraped_pages/
+
+# Environment variables
+.env
+
+# Model files
+models/

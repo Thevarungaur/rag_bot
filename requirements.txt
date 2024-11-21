@@ -1,0 +1,9 @@
+# llama-cpp-python
+bs4
+transformers
+faiss-cpu
+torch
+gradio
+requests
+numpy
+google-generativeai
