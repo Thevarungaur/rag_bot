@@ -1,5 +1,5 @@
 ---
-title: NIET Chatbot
+title: Hansraj Chatbot
 emoji: 💻
 colorFrom: indigo
 colorTo: purple
@@ -12,7 +12,7 @@ license: mit
 
 ## Hansraj Chatbot
 
-As an internship project under the **Department of ECE, NIET**, I have created this application to serve as an LLM-based chatbot that can deliver context-aware answers to questions related to NIET. It does so by leveraging the _RAG_ (Retrieval-Augmented Generation) technique.
+As a software engineering project under the Department of computer science, Hansraj College, I have created this application to serve as an LLM-based chatbot that can deliver context-aware answers to questions related to Hansraj College. It does so by leveraging the RAG (Retrieval-Augmented Generation) technique.
 
 ### How to run?
 
@@ -52,10 +52,7 @@ python3 app.py
 Head over to [localhost:7860](http://localhost:7860) to view the application running.
 Try asking questions such as:
 
-- _What NAAC grade does NIET have?_
-- _What is the International Twinning Program at NIET?_
-- _Tell me about the ECE department at NIET._
+- _What NAAC grade does hansraj have have?_
+- _Tell me about the college_
+- _Tell me about the Computer Science department at Hansraj College._
 
-### Running with HuggingFace Spaces
-
-This project is deployed as a `gradio` project over at _HuggingFace Spaces_, and can be viewed [here](https://huggingface.co/spaces/AditiDubey2111/niet-chatbot).

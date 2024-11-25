@@ -27,10 +27,16 @@ ctx_tokenizer = DPRContextEncoderTokenizer.from_pretrained(
 #                 docs.append(chunk)
 
 # Hard-coding for testing
-docs = ["NIET is one of the premier Engineering and Management institutes of India's National Capital Region (NCR).",
-        "NIET has a NAAC A grade and a score of 3.23",
-        "NIET offers an AICTE-approved International Twinning program, enabling students to access global learning opportunities through institution partnerships. It provides affordable pathways for higher education with international exposure, making NIET one of the few Indian institutes offering such programs.",
-        "The Department of ECE, approved by All India Council for Technical Education (AICTE) and accredited by the National Board of Accreditation (NBA), New Delhi was established in the year 2001."]
+docs = [
+    "Hansraj College, founded on 26th July 1948 by the D.A.V. College Managing Committee, is one of the largest constituent colleges of the University of Delhi, established in memory of Maharshi Dayanand Saraswati and Mahatma Hansraj.",
+    "The college offers undergraduate and postgraduate education in Science, Commerce, and Arts to over 5000 students, guided by highly qualified academicians, and is known for excellence in academics, sports, and extracurricular activities.",
+    "Hansraj College has completed 77 years of higher education, producing scholars, bureaucrats, intellectuals, and sportspersons who contribute nationally and internationally.",
+    "The college boasts impressive infrastructure, including a Central Library, Departmental Libraries, six Computer Laboratories, eighteen Science Laboratories, a modern auditorium, seminar rooms, and hostel facilities for over 200 students.",
+    "The college provides excellent sports facilities such as a vast field, football and basketball courts, an indoor sports complex, and the only Electronic Shooting Range in the University of Delhi.",
+    "Scholarships are offered to deserving students, and the serene, lush green campus creates an inspiring environment for holistic growth and learning.",
+    "The B.Sc. (Honours) Computer Science and B.Sc. Program (CS)/B.Sc. Physical Science with Computer Science equip students with interdisciplinary skills, logical thinking, programming expertise, and preparation for postgraduate studies like M.Sc., M.C.A., and M.B.A., or placements in various sectors.",
+    "Distinguished alumni of the Computer Science Department include Professor (Dr.) Mamta Sareen (Kirori Mal College, DU), Dr. Harmeet Kaur (Hansraj College, DU), Mr. Anuj Goel (Director, Macquarie), Mr. Kushal Chawal (Film Director, Amazon Prime), and Ms. Ayushi Chirania (Higher Education, IIM Calcutta), among others."
+]
 
 # Tokenize and encode documents
 inputs = ctx_tokenizer(docs, return_tensors="pt",

@@ -1,7 +1,3 @@
-"""
-The purpose of this file is to scrape contents from the NIET website to be context-aware while answering questions relating to NIET
-"""
-
 import os
 import requests
 from bs4 import BeautifulSoup
@@ -13,7 +9,7 @@ PAGES = [
     "https://www.hansrajcollege.ac.in/academics/departments/science/computer-science/courses",
 ]
 
-MAX_PAGES_TO_SCRAPE = (int)(os.getenv("MAX_PAGES_TO_SCRAPE", 2))
+MAX_PAGES_TO_SCRAPE = (int)(os.getenv("MAX_PAGES_TO_SCRAPE", 3))
 
 
 def scrape_page(url):
@@ -24,22 +20,14 @@ def scrape_page(url):
 
         # Parse the page content using BeautifulSoup
         soup = BeautifulSoup(response.content, 'html.parser')
-        main_content = soup.find(id="myTabContent")
 
-        if (main_content == None):
-            main_content = soup.find(id="directadmission")
-
-        if (main_content == None):
-            return url, None
-
-        # Extract the page text
-        page_text = main_content.get_text(separator="\n").strip()
+        # Extract the entire page text
+        page_text = soup.get_text(separator="\n").strip()
 
         return url, page_text
     except requests.exceptions.RequestException as e:
         print(f"Error fetching {url}: {e}")
         return url, None
-
 
 def save_to_file(url, content):
     # Make sure that the directory exists
