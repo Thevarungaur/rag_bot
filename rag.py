@@ -15,7 +15,7 @@ ctx_tokenizer = DPRContextEncoderTokenizer.from_pretrained(
 
 
 # Read documents from the scraped_pages folder
-docs = []
+# docs = []
 # scraped_pages_folder = os.path.join(os.path.dirname(__file__), 'scraped_pages')
 # for filename in os.listdir(scraped_pages_folder):
 #     if filename.endswith('.txt'):

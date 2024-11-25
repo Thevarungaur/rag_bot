@@ -1,17 +1,18 @@
 import os
 import gradio as gr
 import torch
-from llama_cpp import Llama
+# from llama_cpp import Llama
 
 import setup    # setup.py file
 import rag      # rag.py file
 
-setup.download_model()
+os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
+# setup.download_model()
 
-llm = Llama(
-    model_path="./models/model.gguf",
-    verbose=False
-)
+# llm = Llama(
+#     model_path="./models/model.gguf",
+#     verbose=False
+# )
 
 
 def generate(query, context):
@@ -29,10 +30,10 @@ def generate(query, context):
     # )
 
     return context
-
     return response["choices"][0]["message"]["content"]
 
-
+    
+# Define the chat function
 def chat(query, history=[]):
     context = rag.retrieve(query)
     response = generate(query, context)
@@ -40,10 +41,21 @@ def chat(query, history=[]):
 
     return response
 
-
 # Define the Gradio interface
-ui = gr.ChatInterface(fn=chat, type="messages",
-                      title="NIET Chatbot")
+ui = gr.ChatInterface(
+    fn=chat,
+    type="messages",
+    title="Hansraj Chatbot 🤖",
+    description=(
+        "🤖 Hansraj Chatbot is here to assist you with all queries related to Hansraj College. "
+        "Whether it's about the college's history, achievements, or facilities, feel free to ask!"
+    ),
+    examples=[
+        "Tell me about the college?",
+        "Tell me about Hansraj College?",
+        "What are the achievements of Hansraj College?"
+    ]
+)
 
 # Launch the interface
 ui.launch()
