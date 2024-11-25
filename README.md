@@ -55,4 +55,3 @@ Try asking questions such as:
 - _What NAAC grade does hansraj have have?_
 - _Tell me about the college_
 - _Tell me about the Computer Science department at Hansraj College._
-
